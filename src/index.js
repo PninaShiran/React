@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
-import {productReducer, shoppingCartReducer, userReducer} from "./store/reducers";
+import {productReducer, userReducer, categoryReducer} from "./store/reducers";
 import { BrowserRouter } from 'react-router-dom';
 import {composeWithDevTools} from 'redux-devtools-extension'
-let myStore = createStore(combineReducers({p:productReducer,u:userReducer,s:shoppingCartReducer}),composeWithDevTools())
+let myStore = createStore(combineReducers({p:productReducer,u:userReducer,c:categoryReducer}),composeWithDevTools())
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

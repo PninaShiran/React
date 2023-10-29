@@ -1,22 +1,33 @@
 function Item(props) {
-    return (<div className="ui card">
-    <div className="image">
-      <img src={props.show.img}/>
-    </div>
-    <div className="content">
-      <h2>{props.show.name}</h2>
+  return (
+    <div className="ui card">
+      <div className="image">
+        <img src={props.show.Img} />
+      </div>
+      <div className="content">
+        <h2>{props.show.Name}</h2>
+        <h1>מרכיבים</h1>
+        <ul>
+        {props.show.Ingrident.map((ingredient, index) => (
+    <li key={index}>
+      {ingredient.Name} - {ingredient.Count} {ingredient.Type}
+    </li>
+  ))}
+        </ul>
+      </div>
       <div className="meta">
-          <h4>{props.show.company}</h4>
-        <span className="date">{`${props.show.price} ₪`}</span>
-      </div>
-      <div className="description">
-        {props.show.description}
+        <div>{props.show.Duration}</div>
+        <div className="description">{props.show.Description}</div>
+        <div>{props.show.Difficulty}</div>
+        <h1>הוראות</h1>
+        <ul>
+          {props.show.Instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
+          ))}
+        </ul>
       </div>
     </div>
-    <div className="extra content">
-       {`מלאי: ${props.show.qty} יחידות`} 
-    </div>
-  </div>);
+  );
 }
 
 export default Item;

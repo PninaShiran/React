@@ -1,29 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import AddProduct from './components/AddProduct';
-import Login from './components/Login';
-import NavBar from './components/NavBar';
-import { Route, Routes } from 'react-router-dom';
-import List from './components/List';
-import Register from './components/Register';
-import ShoppingCart from './components/ShoppingCart';
-import SmallShoppingCart from './components/SmallShoppingCart';
-import Order from './components/Order';
+import "./App.css";
 
+import Login from "./components/Login";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import List from "./components/List";
+
+import Register from "./components/Register";
+import CategoryList from "./components/CategoryList";
+import AddCategory from "./components/AddCategoey";
+import AddProduct from "./components/AddProduct";
 function App() {
-  return (<>
-   <NavBar/>
-   <Routes>
-     <Route path='' element={<List/>}/>
-     <Route path='list' element={<List/>}/>
-     <Route path='register' element={<Register/>}/>
-     <Route path='login' element={<Login/>}/>
-     <Route path='cart' element={<ShoppingCart/>}/>
-     <Route path='add-product' element={<AddProduct/>}/>
-     <Route path='small-shopping-cart' element={<SmallShoppingCart/>}/>
-     <Route path='order' element={<Order/>}/>
-   </Routes>
-  </>);
+  return (
+    <>
+      <NavBar />
+      <Routes>
+      <Route path='add-product' element={<AddProduct/>} />
+        <Route path="" element={<List />} />
+        <Route path="list" element={<List />} />
+        <Route path="register" element={<Register />} />
+        <Route path="categoryList" element={<CategoryList />} />
+        <Route path="addCategory" element={<AddCategory />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
